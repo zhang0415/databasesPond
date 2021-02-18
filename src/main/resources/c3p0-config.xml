@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--根标签  和文件名称一致-->
+<c3p0-config>
+
+    <!--默认配置标签-->
+    <!--<default-config>-->
+    <!--可以指定名称进行配置  适用于多数据源场景-->
+    <named-config name="myC3p0">
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/test_spring?serverTimezone=CST</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <!--初始化连接池的连接数量-->
+        <property name="initialPoolSize">10</property>
+        <!--最大可创建连接数-->
+        <property name="maxPoolSize">10</property>
+        <!--最小连接数量-->
+        <property name="minPoolSize">2</property>
+        <!--当没有空闲连接时  一次性创建的新连接数量-->
+        <property name="acquireIncrement">2</property>
+        <!--连接的最大空闲时间  如果一直未使用  则断掉此连接  如果配置为0  则永远不会断掉-->
+        <!--<property name="maxIdleTime">0</property>-->
+    </named-config>
+    <!--</default-config>-->
+
+</c3p0-config>
